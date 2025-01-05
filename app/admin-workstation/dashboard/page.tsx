@@ -3,9 +3,9 @@ import React, { useState, useEffect } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { app } from "@/lib/firebaseConfig";
 import { useRouter } from "next/navigation";
-import ProductPage from "@/pages/productpage";
-import NewsPage from "@/pages/newspage";
-import CountDashboard from "@/pages/countdashboard";
+import ProductPage from "@/pages/admin/productpage";
+import NewsPage from "@/pages/admin/newspage";
+import CountDashboard from "@/pages/admin/countdashboard";
 
 export default function Page() {
   const [isAdmin, setIsAdmin] = useState<boolean>(false);

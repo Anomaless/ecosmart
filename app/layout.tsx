@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 import Sidebar from "@/components/sidebar";
+import Navbar from "@/components/navbar";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body className={`${montserrat.className} antialiased flex`}>
+        <Navbar />
         <Sidebar />
 
         <div className="w-full">

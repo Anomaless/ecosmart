@@ -1,9 +1,12 @@
+import AboutPage from "@/pages/home/aboutview";
+import HomePage from "@/pages/home/homeview";
 import React from "react";
 
 export default function page() {
   return (
     <div>
-      <h1>HAHA HIHI</h1>
+      <HomePage />
+      <AboutPage />
     </div>
   );
 }
