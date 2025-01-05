@@ -85,7 +85,6 @@ export default function NewsPage() {
       {loading && <p>Loading...</p>}
       {error && <p className="text-red-500">{error}</p>}
 
-      {/* Search Input */}
       <div className="mb-4">
         <input
           type="text"

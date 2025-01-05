@@ -6,7 +6,7 @@ import { FaUserPlus } from "react-icons/fa";
 import { FaDatabase } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
-import { app } from "@/lib/firebaseConfig"; // Pastikan import firebaseConfig Anda benar
+import { app } from "@/lib/firebaseConfig";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,16 +21,14 @@ const Sidebar = () => {
   useEffect(() => {
     const auth = getAuth(app);
 
-    // Mendengarkan perubahan status autentikasi
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUserEmail(user.email); // Update email pengguna setelah login
+        setUserEmail(user.email);
       } else {
-        setUserEmail(null); // Jika tidak ada pengguna, set ke null
+        setUserEmail(null);
       }
     });
 
-    // Membersihkan listener saat komponen unmount
     return () => unsubscribe();
   }, []);
 
@@ -40,8 +38,8 @@ const Sidebar = () => {
     try {
       const auth = getAuth(app);
       await signOut(auth);
-      // Redirect ke halaman login setelah logout
-      window.location.href = "/login"; // Sesuaikan path sesuai kebutuhan
+
+      window.location.href = "/login";
     } catch (error) {
       console.error("Error logging out:", error);
     }
@@ -71,7 +69,6 @@ const Sidebar = () => {
           </Link>
         </div>
 
-        {/* Display the welcome message */}
         {userEmail && (
           <div className="text-center text-lg font-bold text-white mb-6">
             Selamat datang, {userEmail}

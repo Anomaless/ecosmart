@@ -33,7 +33,7 @@ export default function ProductPage() {
           ...doc.data(),
         })) as Product[];
         setProducts(productsData);
-        setFilteredProducts(productsData); // Initialize filteredProducts
+        setFilteredProducts(productsData);
       } catch (error: any) {
         console.error("Error fetching Firestore data:", error);
         setError("Gagal mengambil data dari Firestore");
@@ -60,7 +60,7 @@ export default function ProductPage() {
         )
       );
     } else {
-      setFilteredProducts(products); // Show all products if no search query
+      setFilteredProducts(products);
     }
   }, [searchQuery, products]);
 
@@ -75,7 +75,7 @@ export default function ProductPage() {
       setProducts((prev) => prev.filter((product) => product.id !== id));
       setFilteredProducts((prev) =>
         prev.filter((product) => product.id !== id)
-      ); // Update filtered products as well
+      );
       alert("Produk berhasil dihapus!");
     } catch (error) {
       console.error("Error deleting product:", error);
@@ -89,7 +89,6 @@ export default function ProductPage() {
       {loading && <p>Loading...</p>}
       {error && <p className="text-red-500">{error}</p>}
 
-      {/* Search Input */}
       <div className="mb-4">
         <input
           type="text"
@@ -129,7 +128,6 @@ export default function ProductPage() {
                 <strong>Pemilik:</strong> {product.ownerName}
               </p>
 
-              {/* E-commerce Button */}
               {product.selectedEcommerce && product.ecommerceLink && (
                 <a
                   href={product.ecommerceLink}
@@ -141,7 +139,6 @@ export default function ProductPage() {
                 </a>
               )}
 
-              {/* WhatsApp Button */}
               {product.whatsappNumber && (
                 <a
                   href={`https://wa.me/${product.whatsappNumber}`}

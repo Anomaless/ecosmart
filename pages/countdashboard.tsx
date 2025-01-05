@@ -2,7 +2,7 @@
 import { useState, useEffect, JSX } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/lib/firebaseConfig";
-import { FaNewspaper, FaBox } from "react-icons/fa"; // Importing icons
+import { FaNewspaper, FaBox } from "react-icons/fa";
 
 export default function CountDashboard() {
   const [newsCount, setNewsCount] = useState<number>(0);
@@ -17,8 +17,8 @@ export default function CountDashboard() {
         const newsSnapshot = await getDocs(collection(db, "news"));
         const productsSnapshot = await getDocs(collection(db, "products"));
 
-        setNewsCount(newsSnapshot.size); // Set the count of news
-        setProductsCount(productsSnapshot.size); // Set the count of products
+        setNewsCount(newsSnapshot.size);
+        setProductsCount(productsSnapshot.size);
       } catch (error: any) {
         console.error("Error fetching Firestore data:", error);
         setError("Gagal mengambil data dari Firestore");

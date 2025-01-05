@@ -2,7 +2,6 @@ import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
-// Firebase configuration from environment variables
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY!,
   authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN!,
@@ -13,10 +12,8 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID!,
 };
 
-// Initialize Firebase app if not already initialized
 export const app =
   getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
 
-// Initialize Firestore and Auth using the Firebase app
 export const db = getFirestore(app);
 export const auth = getAuth(app);

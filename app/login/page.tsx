@@ -8,7 +8,7 @@ export default function AdminLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
-  const adminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL; // Mengambil email admin dari .env
+  const adminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL;
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,11 +20,9 @@ export default function AdminLogin() {
       );
       const user = userCredential.user;
 
-      // Cek apakah email adalah email admin
       if (user.email === adminEmail) {
-        router.push("/admin-workstation/dashboard"); // Arahkan ke halaman admin jika email cocok
+        router.push("/admin-workstation/dashboard");
       } else {
-        // Logout jika bukan email admin
         alert("Akses ditolak: Anda bukan admin");
         await auth.signOut();
       }

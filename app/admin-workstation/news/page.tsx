@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { app, db } from "@/lib/firebaseConfig"; // Pastikan db diimpor
+import { app, db } from "@/lib/firebaseConfig";
 import { collection, addDoc } from "firebase/firestore";
 import { useRouter } from "next/navigation";
 
@@ -78,7 +78,6 @@ export default function UploadNews() {
       const imageUrl = data.secure_url;
       const dateCreated = new Date().toISOString();
 
-      // **Mengaktifkan kembali penyimpanan ke Firestore**
       await addDoc(collection(db, "news"), {
         titleNews,
         descriptionNews,

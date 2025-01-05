@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { useRouter } from "next/navigation"; // For redirecting
+import { useRouter } from "next/navigation";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -14,7 +14,6 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-// Cek apakah instance Firebase sudah ada, jika belum, inisialisasi
 const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
