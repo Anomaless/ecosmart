@@ -68,24 +68,22 @@ export default function AboutPage() {
             className="w-full xl:w-1/2 text-start xl:text-start"
           >
             <p className="pb-4 text-black">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Pellentesque sit amet purus non eros fermentum tincidunt. Nulla
-              facilisi. Morbi dapibus, risus et laoreet fringilla, ex dolor
-              interdum sapien, ac scelerisque nisi justo id risus. Fusce
-              porttitor dolor sed elit dapibus, ac fermentum metus feugiat. Cras
-              luctus velit nec elit pharetra, eu convallis purus tempor.
-              Suspendisse potenti. In vitae consectetur dolor, ac malesuada
-              erat. Curabitur vehicula bibendum neque, sed vulputate mi blandit
-              eu. Integer dapibus augue sed tellus pulvinar varius.
+              Unit Katon Semilak adalah komunitas bank sampah yang lahir dari
+              semangat kebersamaan warga Gebang, RT 02 RW 16, Banjarsari.
+              Didukung oleh ibu-ibu PKK dan masyarakat setempat, komunitas ini
+              menjadi pelopor pengelolaan sampah yang kreatif dan berkelanjutan.
+              Berkat dedikasi dan inovasi kami, Unit Katon Semilak telah meraih
+              berbagai prestasi membanggakan hingga menarik perhatian media
+              internasional, termasuk dari Jepang.
             </p>
             <p className="py-4 text-black">
-              Donec nec neque ac purus dapibus facilisis. Nam sit amet dui a
-              eros suscipit malesuada. Vivamus eu augue at lectus congue
-              lacinia. Quisque ac odio sit amet elit congue vestibulum. Sed
-              elementum, urna nec congue dictum, risus nulla pharetra nisl, a
-              malesuada lectus justo nec orci. Integer a orci odio. Nulla
-              facilisi. Suspendisse nec magna in orci vehicula laoreet. Nam
-              sagittis purus et velit dapibus, sit amet tincidunt nunc pharetra.
+              Dari tangan-tangan kreatif anggota komunitas, lahir berbagai
+              produk ramah lingkungan seperti ecoprint, kompos, tas daur ulang,
+              dan masih banyak lagi. Produk-produk ini tidak hanya membawa
+              manfaat bagi lingkungan, tetapi juga menjadi sumber inspirasi dan
+              peluang ekonomi bagi masyarakat. Kami percaya bahwa melalui
+              langkah kecil yang konsisten, kita dapat menciptakan dampak besar
+              untuk masa depan yang lebih hijau dan berkelanjutan.
             </p>
           </motion.div>
         </motion.div>
