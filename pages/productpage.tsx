@@ -128,34 +128,36 @@ export default function ProductPage() {
                 <strong>Pemilik:</strong> {product.ownerName}
               </p>
 
-              {product.selectedEcommerce && product.ecommerceLink && (
-                <a
-                  href={product.ecommerceLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all block"
-                >
-                  {product.selectedEcommerce}
-                </a>
-              )}
+              <div className="mt-4 flex justify-between gap-2">
+                {product.selectedEcommerce && product.ecommerceLink && (
+                  <a
+                    href={product.ecommerceLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-all text-center flex-1"
+                  >
+                    {product.selectedEcommerce}
+                  </a>
+                )}
 
-              {product.whatsappNumber && (
-                <a
-                  href={`https://wa.me/${product.whatsappNumber}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition-all block"
-                >
-                  Chat via WhatsApp
-                </a>
-              )}
+                {product.whatsappNumber && (
+                  <a
+                    href={`https://wa.me/${product.whatsappNumber}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-green-600 transition-all text-center flex-1"
+                  >
+                    WhatsApp
+                  </a>
+                )}
 
-              <button
-                onClick={() => handleDelete(product.id)}
-                className="mt-4 bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition-all"
-              >
-                Hapus Produk
-              </button>
+                <button
+                  onClick={() => handleDelete(product.id)}
+                  className="bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition-all text-center flex-1"
+                >
+                  Hapus
+                </button>
+              </div>
             </div>
           ))}
         </div>

@@ -138,41 +138,41 @@ export default function UploadImage() {
           placeholder="Nama Produk"
           value={productName}
           onChange={(e) => setProductName(e.target.value)}
-          className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#009539]"
         />
         <input
           type="text"
           placeholder="Deskripsi Produk"
           value={descriptionProduct}
           onChange={(e) => setDescriptionProduct(e.target.value)}
-          className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#009539]"
         />
         <input
           type="text"
           placeholder="Harga Produk"
           value={priceProduct}
           onChange={(e) => setPriceProduct(e.target.value)}
-          className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#009539]"
         />
         <input
           type="text"
           placeholder="Nama Pemilik"
           value={ownerName}
           onChange={(e) => setOwnerName(e.target.value)}
-          className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#009539]"
         />
         <input
           type="text"
           placeholder="Nomor WhatsApp"
           value={whatsappNumber}
           onChange={(e) => setWhatsappNumber(e.target.value)}
-          className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#009539]"
         />
 
         <select
           value={selectedEcommerce}
           onChange={(e) => setSelectedEcommerce(e.target.value)}
-          className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#009539]"
         >
           <option value="">Pilih E-commerce</option>
           <option value="Tokopedia">Tokopedia</option>
@@ -186,7 +186,7 @@ export default function UploadImage() {
             placeholder={`Link ${selectedEcommerce}`}
             value={ecommerceLink}
             onChange={(e) => setEcommerceLink(e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#009539]"
           />
         )}
 
@@ -199,7 +199,7 @@ export default function UploadImage() {
         <button
           onClick={handleUpload}
           disabled={uploading}
-          className="w-full py-3 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none disabled:bg-gray-400"
+          className="w-full py-3 px-4 bg-[#009539] text-white hover:text-[#009539] font-bold rounded-md hover:bg-white border-2 border-[#009539] focus:outline-none disabled:bg-gray-400"
         >
           {uploading ? "Uploading..." : "Upload Gambar"}
         </button>

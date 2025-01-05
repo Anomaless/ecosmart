@@ -36,10 +36,10 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="w-full h-screen bg-bglogin bg-cover bg-center">
+    <div className="w-full h-screen bg-loginbg bg-cover bg-center">
       <div className="h-full w-full py-[125px] px-8 flex md:items-end items-center justify-center bg-black/80">
         <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-md">
-          <h2 className="text-3xl font-bold mb-6 text-center text-[#8b2f31]">
+          <h2 className="text-3xl font-bold mb-6 text-center text-[#009539]">
             Admin Login
           </h2>
           <form onSubmit={handleLogin} className="space-y-4">
@@ -49,7 +49,7 @@ export default function AdminLogin() {
                 placeholder="Admin Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full text-black p-3 border border-[#8b2f31] rounded-md focus:outline-none focus:ring-2 focus:ring-[#8b2f31]"
+                className="w-full text-black p-3 border border-[#009539] rounded-md focus:outline-none focus:ring-2 focus:ring-[#009539]"
                 required
               />
             </div>
@@ -59,13 +59,13 @@ export default function AdminLogin() {
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full text-black p-3 border border-[#8b2f31] rounded-md focus:outline-none focus:ring-2 focus:ring-[#8b2f31]"
+                className="w-full text-black p-3 border border-[#009539] rounded-md focus:outline-none focus:ring-2 focus:ring-[#009539]"
                 required
               />
             </div>
             <button
               type="submit"
-              className="w-full bg-[#8b2f31] text-white hover:text-black py-3 rounded-md font-semibold hover:bg-[#f9d747] transition duration-300"
+              className="w-full bg-[#009539] text-white hover:text-[#009539] py-3 rounded-md font-semibold hover:bg-[#ffffff] border hover:border-[#009539] transition duration-300"
             >
               Login as Admin
             </button>

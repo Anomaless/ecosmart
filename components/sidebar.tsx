@@ -2,11 +2,10 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { MdDashboard } from "react-icons/md";
-import { FaUserPlus } from "react-icons/fa";
-import { FaDatabase } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
 import { app } from "@/lib/firebaseConfig";
+import { FaNewspaper, FaBox } from "react-icons/fa";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -62,22 +61,17 @@ const Sidebar = () => {
         <div className="flex pt-12 items-center font-bold gap-2 px-6 mb-5">
           <Link href="/">
             <img
-              src="/assets/images/Logo.png"
+              src="/assets/image/ecoSmartLogo.png"
               alt="Logo"
-              className="w-20 h-10"
+              className="w-10 h-10"
             />
           </Link>
+          <h1> EcoSmartVillage</h1>
         </div>
 
-        {userEmail && (
-          <div className="text-center text-lg font-bold text-white mb-6">
-            Selamat datang, {userEmail}
-          </div>
-        )}
-
         <ul className="list-none p-0">
-          <li className="flex py-4 px-6 hover:bg-[#f9d747] hover:text-[#8b2f31]">
-            <MdDashboard className="text-3xl pr-2" />
+          <li className="flex py-4 px-6 hover:bg-[#ffffff] hover:text-[#009539]">
+            <MdDashboard className="text-4xl pr-2" />
             <Link
               href="/admin-workstation/dashboard"
               className="block font-bold"
@@ -85,23 +79,28 @@ const Sidebar = () => {
               DASHBOARD
             </Link>
           </li>
-          <li className="py-4 flex px-6 hover:bg-[#f9d747] hover:text-[#8b2f31]">
-            <FaUserPlus className="text-3xl pr-2" />
+          <li className="py-4 flex px-6 hover:bg-[#ffffff] hover:text-[#009539]">
+            <FaBox className="text-3xl pr-2" />
             <Link href="/admin-workstation/product" className="block font-bold">
               PRODUCT
             </Link>
           </li>
-          <li className="py-4 flex px-6 hover:bg-[#f9d747] hover:text-[#8b2f31]">
-            <FaDatabase className="text-2xl pr-2" />
+          <li className="py-4 flex px-6 hover:bg-[#ffffff] hover:text-[#009539]">
+            <FaNewspaper className="text-4xl pr-2" />
             <Link href="/admin-workstation/news" className="block font-bold">
               NEWS
             </Link>
           </li>
         </ul>
         <div className="absolute bottom-5 left-0 right-0 p-6">
+          {userEmail && (
+            <div className="text-center text-lg font-bold text-white mb-6">
+              Selamat datang, {userEmail}
+            </div>
+          )}
           <button
             onClick={handleLogout}
-            className="w-full py-2 px-4 text-white bg-red-500 rounded-lg hover:bg-red-600 transition-colors"
+            className="font-bold w-full py-2 px-4 text-white border-2 hover:border-white border-[#009539] bg-red-600 rounded-lg hover:bg-[#009539] transition-colors"
           >
             LOGOUT
           </button>

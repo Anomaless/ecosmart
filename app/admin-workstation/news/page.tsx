@@ -112,27 +112,27 @@ export default function UploadNews() {
           placeholder="Judul Berita"
           value={titleNews}
           onChange={(e) => setTitleNews(e.target.value)}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#009539]"
         />
         <input
           type="text"
           placeholder="Deskripsi Berita"
           value={descriptionNews}
           onChange={(e) => setDescriptionNews(e.target.value)}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#009539]"
         />
         <input
           type="text"
           placeholder="Penulis Berita"
           value={writterNews}
           onChange={(e) => setWritterNews(e.target.value)}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#009539]"
         />
         <input
           type="file"
           onChange={handleFileChange}
           accept="image/*"
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#009539]"
         />
         <button
           onClick={handleUpload}
@@ -140,8 +140,8 @@ export default function UploadNews() {
           className={`w-full py-2 text-white rounded-lg ${
             uploading
               ? "bg-gray-500 cursor-not-allowed"
-              : "bg-blue-500 hover:bg-blue-600"
-          } focus:outline-none focus:ring-2 focus:ring-blue-500`}
+              : "bg-[#009539] border-2 font-bold border-[#009539] hover:text-[#009539] hover:bg-white"
+          } focus:outline-none focus:ring-2 focus:ring-[#009539]`}
         >
           {uploading ? "Uploading..." : "Upload Berita"}
         </button>
