@@ -1,14 +1,15 @@
-import { Montserrat } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import type { Metadata } from "next";
 
 import Sidebar from "@/components/sidebar";
 import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
-const montserrat = Montserrat({
+const poppins = Poppins({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-montserrat",
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -23,13 +24,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id">
-      <body className={`${montserrat.className} antialiased flex`}>
+      <body
+        className={`${poppins.className} antialiased flex flex-col min-h-screen`}
+      >
         <Navbar />
         <Sidebar />
 
-        <div className="w-full">
+        <div className="flex flex-1 w-full">
           <main className="w-full">{children}</main>
         </div>
+        <Footer />
       </body>
     </html>
   );

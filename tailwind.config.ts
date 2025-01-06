@@ -5,6 +5,7 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/flowbite/**/*.js", // Tambahkan path ini untuk mendukung Flowbite
   ],
   theme: {
     extend: {
@@ -19,6 +20,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("flowbite/plugin")], // Pastikan plugin ini diaktifkan
 };
+
 export default config;

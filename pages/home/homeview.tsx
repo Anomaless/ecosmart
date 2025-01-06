@@ -5,34 +5,18 @@ import Image from "next/image";
 import { IoArrowForwardCircleOutline } from "react-icons/io5";
 import Link from "next/link";
 
-function variantsText() {
+function variants() {
   return {
     offscreen: {
       y: 150,
       opacity: 0,
     },
-    onscreen: ({ duration = 4 } = {}) => ({
+    onscreen: ({ duration = 1 } = {}) => ({
       y: 0,
       opacity: 1,
       transition: {
         type: "spring",
-        duration,
-      },
-    }),
-  };
-}
-
-function variantsProfile() {
-  return {
-    offscreen: {
-      y: 150,
-      opacity: 0,
-    },
-    onscreen: ({ duration = 5 } = {}) => ({
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
+        bounce: 0.4,
         duration,
       },
     }),
@@ -40,17 +24,17 @@ function variantsProfile() {
 }
 
 export default function HomePage() {
-  const setVariantsText = useMemo(() => variantsText(), []);
-  const setVariantsProfile = useMemo(() => variantsProfile(), []);
+  const setVariants = useMemo(() => variants(), []);
 
   return (
-    <div id="home" className="h-full min-h-screen">
-      <div className="mx-auto max-w-7xl mt-20 px-6 pt-6  md:px-14  md:mt-4">
-        <motion.div className="flex flex-col xl:flex-row items-center text-white justify-between xl:pt-8 ">
+    <div id="home" className="min-h-screen py-16 bg-white">
+      <div className="mx-auto max-w-7xl mt-20 px-6 pt-6 md:px-14 md:mt-4">
+        <motion.div className="flex flex-col xl:flex-row items-center text-white justify-between xl:pt-8">
           <motion.div
-            variants={setVariantsText}
+            variants={setVariants}
             initial="offscreen"
-            animate="onscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.3 }}
             className="text-center xl:text-start mb-8 xl:mb-0"
           >
             <h1 className="text-[32px] md:text-[48px] text-[#009539] xl:text-[50px] leading-[1.1] font-bold">
@@ -65,7 +49,6 @@ export default function HomePage() {
                 href="#about"
                 className="flex items-center gap-2 text-white bg-[#2f7d32] px-5 py-2 rounded-lg font-semibold transition duration-300 ease-in-out hover:bg-[#245a24]"
               >
-                {" "}
                 TENTANG KAMI
                 <IoArrowForwardCircleOutline size={24} />
               </Link>
@@ -73,17 +56,18 @@ export default function HomePage() {
           </motion.div>
 
           <motion.div
-            variants={setVariantsProfile}
+            variants={setVariants}
             initial="offscreen"
-            animate="onscreen"
-            className="flex justify-center xl:justify-end w-full xl:w-auto "
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.3 }}
+            className="flex justify-center xl:justify-end w-full xl:w-auto"
           >
             <div>
               <Image
                 src="/assets/image/ecoSmartLogo.png"
                 alt="Ramdhani"
-                width={500}
-                height={500}
+                width={650}
+                height={650}
                 className="rounded-full object-cover md:w-[500px] md:h-[500px]"
               />
             </div>
