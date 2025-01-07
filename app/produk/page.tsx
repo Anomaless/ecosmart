@@ -12,8 +12,9 @@ const page = () => {
     productName: string;
     ownerName: string;
     priceProduct: string;
-    selectedEcommerce: string; // Ensure this property is included
-    whatsappNumber: string; // Add this line
+    selectedEcommerce: string;
+    whatsappNumber: string;
+    descriptionProduct: string;
   }
 
   const [productsData, setProductsData] = useState<Product[]>([]);
@@ -32,7 +33,8 @@ const page = () => {
             ownerName: data.ownerName,
             priceProduct: data.priceProduct,
             selectedEcommerce: data.selectedEcommerce,
-            whatsappNumber: data.whatsappNumber || "", // Add this line
+            whatsappNumber: data.whatsappNumber || "",
+            descriptionProduct: data.descriptionProduct || "",
           } as Product;
         });
         setProductsData(productsData);

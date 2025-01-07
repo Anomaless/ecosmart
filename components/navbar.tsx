@@ -23,7 +23,7 @@ export default function Navbar() {
 
   useEffect(() => {
     if (pathname === "/") setActiveLink("home");
-    else if (pathname === "/produk") setActiveLink("produk");
+    else if (pathname?.startsWith("/produk")) setActiveLink("produk");
     else if (pathname === "/berita") setActiveLink("berita");
   }, [pathname]);
 

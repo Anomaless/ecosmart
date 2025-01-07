@@ -6,6 +6,7 @@ import { db } from "@/lib/firebaseConfig";
 import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
 import ProdukCard from "@/components/ProdukCard";
+import ProdukCardSkeleton from "@/components/ProdukCardSkeleton";
 
 function variants() {
   return {
@@ -68,7 +69,20 @@ export default function ProdukKamiSection() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <section className="min-h-screen flex items-center justify-center py-12 ">
+        <div className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto">
+          <h2 className="text-2xl font-bold text-[#2b7a0b] mb-8 text-center">
+            PRODUK KAMI
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
+            {Array.from({ length: 3 }).map((_, index) => (
+              <ProdukCardSkeleton key={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+    );
   }
 
   return (
