@@ -47,7 +47,7 @@ export default function WhatWeDoSection() {
   const setVariants = useMemo(() => variants(), []);
 
   return (
-    <section className="bg-[#f3f8e7] flex items-center justify-center py-12">
+    <section className="bg-white flex items-center justify-center py-12">
       <div className="text-center max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto">
         <h2 className="text-2xl font-bold text-[#2b7a0b] mb-8">
           APA YANG KAMI LAKUKAN?
