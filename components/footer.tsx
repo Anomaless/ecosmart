@@ -1,7 +1,13 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+  if (pathname?.startsWith("/admin-workstation")) {
+    return null;
+  }
   return (
     <>
       <Image

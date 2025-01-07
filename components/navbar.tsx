@@ -21,6 +21,12 @@ export default function Navbar() {
     };
   }, []);
 
+  useEffect(() => {
+    if (pathname === "/") setActiveLink("home");
+    else if (pathname === "/produk") setActiveLink("produk");
+    else if (pathname === "/berita") setActiveLink("berita");
+  }, [pathname]);
+
   if (pathname?.startsWith("/admin-workstation")) {
     return null;
   }
@@ -80,18 +86,42 @@ export default function Navbar() {
 
             {/* Desktop Menu */}
             <ul className="hidden lg:flex items-center">
-              <li className="px-4 py-2 mx-2 cursor-pointer hover:text-green-700">
+              <li
+                className={`px-4 py-2 mx-2 cursor-pointer hover:text-green-700 ${
+                  activeLink === "home"
+                    ? scrollActive
+                      ? "border-b-2 border-white text-white"
+                      : "border-b-2 border-green-700 text-green-700"
+                    : ""
+                }`}
+              >
                 <Link href="/" onClick={() => setActiveLink("home")}>
                   Beranda
                 </Link>
               </li>
-              <li className="px-4 py-2 mx-2 cursor-pointer hover:text-green-700">
+              <li
+                className={`px-4 py-2 mx-2 cursor-pointer hover:text-green-700 ${
+                  activeLink === "produk"
+                    ? scrollActive
+                      ? "border-b-2 border-white text-white"
+                      : "border-b-2 border-green-700 text-green-700"
+                    : ""
+                }`}
+              >
                 <Link href="/produk" onClick={() => setActiveLink("produk")}>
                   Produk
                 </Link>
               </li>
-              <li className="px-4 py-2 mx-2 cursor-pointer hover:text-green-700">
-                <Link href="/news" onClick={() => setActiveLink("news")}>
+              <li
+                className={`px-4 py-2 mx-2 cursor-pointer hover:text-green-700 ${
+                  activeLink === "berita"
+                    ? scrollActive
+                      ? "border-b-2 border-white text-white"
+                      : "border-b-2 border-green-700 text-green-700"
+                    : ""
+                }`}
+              >
+                <Link href="/berita" onClick={() => setActiveLink("berita")}>
                   Berita
                 </Link>
               </li>
@@ -105,8 +135,12 @@ export default function Navbar() {
             variants={menuVariants}
             className="lg:hidden overflow-hidden"
           >
-            <ul className="flex flex-col items-center pb-4">
-              <li className="w-full text-center py-2 hover:bg-green-600 hover:text-white">
+            <ul className="flex flex-col items-center pb-4 bg-[#009539] text-white w-full">
+              <li
+                className={`w-full text-center py-2 hover:bg-green-600 ${
+                  activeLink === "home" ? "bg-white text-green-700" : ""
+                }`}
+              >
                 <Link
                   href="/"
                   onClick={() => {
@@ -117,7 +151,11 @@ export default function Navbar() {
                   Beranda
                 </Link>
               </li>
-              <li className="w-full text-center py-2 hover:bg-green-600 hover:text-white">
+              <li
+                className={`w-full text-center py-2 hover:bg-green-600 ${
+                  activeLink === "produk" ? "bg-white text-green-700" : ""
+                }`}
+              >
                 <Link
                   href="/produk"
                   onClick={() => {
@@ -128,11 +166,15 @@ export default function Navbar() {
                   Produk
                 </Link>
               </li>
-              <li className="w-full text-center py-2 hover:bg-green-600 hover:text-white">
+              <li
+                className={`w-full text-center py-2 hover:bg-green-600 ${
+                  activeLink === "berita" ? "bg-white text-green-700" : ""
+                }`}
+              >
                 <Link
-                  href="/news"
+                  href="/berita"
                   onClick={() => {
-                    setActiveLink("news");
+                    setActiveLink("berita");
                     setIsOpen(false);
                   }}
                 >
