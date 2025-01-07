@@ -5,6 +5,7 @@ import React from "react";
 import VisiMisiView from "@/pages/home/VisiMisiView";
 import ProdukKamiSection from "@/pages/home/ProdukKamiView";
 import BeritaKamiSection from "@/pages/home/BeritaKamiView";
+import FAQView from "@/pages/home/FAQView";
 
 export default function page() {
   return (
@@ -15,6 +16,7 @@ export default function page() {
       <VisiMisiView />
       <ProdukKamiSection />
       <BeritaKamiSection />
+      <FAQView />
     </div>
   );
 }

@@ -1,11 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useMemo, useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/lib/firebaseConfig";
 import { FaArrowRight } from "react-icons/fa";
 import Link from "next/link";
+import ProdukCard from "@/components/ProdukCard";
 
 function variants() {
   return {
@@ -32,6 +32,8 @@ export default function ProdukKamiSection() {
     productName: string;
     ownerName: string;
     priceProduct: string;
+    selectedEcommerce: string;
+    whatsappNumber: string; // Add this line
   }
 
   const [productsData, setProductsData] = useState<Product[]>([]);
@@ -50,6 +52,8 @@ export default function ProdukKamiSection() {
             productName: data.productName,
             ownerName: data.ownerName,
             priceProduct: data.priceProduct,
+            selectedEcommerce: data.selectedEcommerce,
+            whatsappNumber: data.whatsappNumber || "", // Add this line
           } as Product;
         });
         setProductsData(productsData);
@@ -69,40 +73,19 @@ export default function ProdukKamiSection() {
 
   return (
     <section className="min-h-screen flex items-center justify-center py-12 ">
-      <div className="text-center max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto">
-        <h2 className="text-2xl font-bold text-[#2b7a0b] mb-8">PRODUK KAMI</h2>
+      <div className=" max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto">
+        <h2 className="text-2xl font-bold text-[#2b7a0b] mb-8 text-center">
+          PRODUK KAMI
+        </h2>
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center"
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.3 }}
         >
-          {productsData.map((product, index) => (
-            <motion.div
-              key={index}
-              variants={setVariants}
-              className="max-w-xs rounded-lg shadow-lg bg-white relative transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
-            >
-              <div className="relative">
-                <Image
-                  src={product.imageUrl}
-                  alt={product.productName}
-                  width={300}
-                  height={300}
-                  className="w-full h-64 object-cover rounded-t-lg"
-                />
-                <button className="absolute top-2 right-2 bg-white rounded-full p-2 shadow-md">
-                  <i className="fas fa-heart text-black"></i>
-                </button>
-              </div>
-              <div className="p-4">
-                <p className="text-sm text-gray-500 mb-1">
-                  {product.ownerName}
-                </p>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                  {product.productName}
-                </h3>
-              </div>
+          {productsData.slice(0, 3).map((product, index) => (
+            <motion.div key={index} variants={setVariants}>
+              <ProdukCard product={product} />
             </motion.div>
           ))}
         </motion.div>
