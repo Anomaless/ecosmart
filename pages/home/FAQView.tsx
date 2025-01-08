@@ -39,12 +39,36 @@ export default function FAQView() {
           </AccordionItem>
           <AccordionItem value="item-4">
             <AccordionTrigger>
-              Bagaimana cara menghubungi dukungan pelanggan?
+              Apa saja produk dari Komunitas Unit Katon Selika?
             </AccordionTrigger>
             <AccordionContent>
-              Anda dapat menghubungi tim dukungan pelanggan kami melalui
-              formulir kontak di situs web kami atau dengan mengirim email ke
-              support@ecosmart.com.
+              Produk:
+              <ol className="list-decimal ml-6">
+                <li>Bunjel Katsu: Sabun Mijel Katon Semilak</li>
+                <li>
+                  Aneka ketrampilan daur ulang:
+                  <ul className="list-disc ml-6">
+                    <li>Bros kain perca</li>
+                    <li>Taplak meja kain perca</li>
+                    <li>Gantungan kunci</li>
+                    <li>Tas kertas</li>
+                    <li>Pot galon bekas</li>
+                    <li>Pot gantung botol plastik</li>
+                  </ul>
+                </li>
+                <li>
+                  Batik ecoprint:
+                  <ul className="list-disc ml-6">
+                    <li>Tote bag</li>
+                    <li>Kain</li>
+                    <li>Baju</li>
+                    <li>Rok</li>
+                    <li>Mukena</li>
+                    <li>Hijab</li>
+                  </ul>
+                </li>
+                <li>Kompos Cair</li>
+              </ol>
             </AccordionContent>
           </AccordionItem>
         </Accordion>
