@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useMemo, useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/lib/firebaseConfig";
+import BeritaCard from "@/components/BeritaCard";
+import ProdukCardSkeleton from "@/components/ProdukCardSkeleton";
 
 function variants() {
   return {
@@ -75,56 +77,67 @@ export default function BeritaKamiSection() {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <section className="min-h-screen flex items-center justify-center py-12 ">
+        <div className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto">
+          <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+            <h2 className="text-[#2b7a0b] text-4xl font-bold mb-4">
+              BERITA KAMI
+            </h2>
+            <p className="mt-1 text-gray-600">
+              Berita seputar EcoSmart semuanya tersedia.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
+            {Array.from({ length: 3 }).map((_, index) => (
+              <ProdukCardSkeleton key={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+    );
   }
 
   return (
-    <section className="bg-white min-h-screen flex items-center justify-center py-12">
-      <div className="text-center max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto w-full">
-        <h2 className="text-2xl font-bold text-[#2b7a0b] mb-8">BERITA KAMI</h2>
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full"
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true, amount: 0.3 }}
+    <section className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto mb-8">
+      <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+        <h2 className="text-[#2b7a0b] text-4xl font-bold mb-4">BERITA KAMI</h2>
+        <p className="mt-1 text-gray-600">
+          Berita seputar EcoSmart semuanya tersedia.
+        </p>
+      </div>
+      <motion.div
+        className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        {newsData.slice(0, 3).map((news, index) => (
+          <motion.div key={index} variants={setVariants}>
+            <BeritaCard news={news} />
+          </motion.div>
+        ))}
+      </motion.div>
+      <div className="mt-12 text-center">
+        <Link
+          href="/berita"
+          className="py-3 px-4 inline-flex items-center gap-x-1 text-sm font-medium rounded-full border border-gray-200 bg-white text-[#2b7a0b] shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
         >
-          {newsData.slice(0, 3).map((news, index) => (
-            <motion.div
-              key={index}
-              variants={setVariants}
-              className="bg-white shadow-md rounded-lg overflow-hidden"
-            >
-              <div className="relative w-full h-48">
-                <Image
-                  src={news.imageUrl}
-                  alt={news.titleNews}
-                  layout="fill"
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-4 text-left">
-                <p className="text-sm text-gray-500">
-                  {formatDate(news.dateCreated)}
-                </p>
-                <h2 className="text-xl font-bold mt-2">
-                  {news.titleNews}
-                  <i className="fas fa-arrow-right"></i>
-                </h2>
-                <p className="text-gray-700 mt-2">{news.descriptionNews}</p>
-                <Link
-                  href={`/news/${news.id}`}
-                  className="mt-4 text-[#2b7a0b] hover:underline"
-                >
-                  Lihat Detail &raquo;
-                </Link>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-        <Link href="/news">
-          <button className="mt-8 px-6 py-2 bg-[#2b7a0b] text-white rounded-lg shadow hover:bg-[#245d08] transition-colors duration-300">
-            Lainnya
-          </button>
+          Berita lainnya
+          <svg
+            className="shrink-0 size-4"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="m9 18 6-6-6-6" />
+          </svg>
         </Link>
       </div>
     </section>

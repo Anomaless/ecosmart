@@ -72,7 +72,7 @@ export default function ProdukKamiSection() {
     return (
       <section className="min-h-screen flex items-center justify-center py-12 ">
         <div className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto">
-          <h2 className="text-2xl font-bold text-[#2b7a0b] mb-8 text-center">
+          <h2 className="text-[#2b7a0b] text-4xl font-bold mb-8 text-center">
             PRODUK KAMI
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
@@ -88,11 +88,16 @@ export default function ProdukKamiSection() {
   return (
     <section className="min-h-screen flex items-center justify-center py-12 ">
       <div className=" max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto">
-        <h2 className="text-2xl font-bold text-[#2b7a0b] mb-8 text-center">
-          PRODUK KAMI
-        </h2>
+        <div className="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+          <h2 className="text-[#2b7a0b] text-4xl font-bold mb-4">
+            PRODUK KAMI
+          </h2>
+          <p className="mt-1 text-gray-600">
+            Berbagai macam produk yang ramah lingkungan.
+          </p>
+        </div>
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center"
+          className="flex flex-wrap gap-4 justify-center items-center"
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.3 }}
@@ -103,13 +108,26 @@ export default function ProdukKamiSection() {
             </motion.div>
           ))}
         </motion.div>
-        <div className="flex justify-center mt-8">
+        <div className="mt-12 text-center">
           <Link
             href="/produk"
-            className="px-6 py-2 bg-[#2b7a0b] text-white rounded-lg shadow hover:bg-[#245d08] transition-colors duration-300 flex items-center space-x-2"
+            className="py-3 px-4 inline-flex items-center gap-x-1 text-sm font-medium rounded-full border border-gray-200 bg-white text-[#2b7a0b] shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none"
           >
-            <span>Lihat Selengkapnya</span>
-            <FaArrowRight className="text-lg" />
+            Produk lainnya
+            <svg
+              className="shrink-0 size-4"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="m9 18 6-6-6-6" />
+            </svg>
           </Link>
         </div>
       </div>

@@ -49,7 +49,11 @@ export default function Navbar() {
       >
         <nav className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto">
           <div className="flex items-center justify-between py-3 sm:py-4">
-            <div className="cursor-pointer flex gap-2 font-bold items-center text-[20px]">
+            <Link
+              href="/"
+              onClick={() => setActiveLink("home")}
+              className="cursor-pointer flex gap-2 font-bold items-center text-[20px]"
+            >
               <MotionImage
                 src="/assets/image/ecoSmartLogo.png"
                 alt="logoEcoSmart"
@@ -58,7 +62,7 @@ export default function Navbar() {
                 className="cursor-pointer"
               />
               EcoSmart
-            </div>
+            </Link>
 
             {/* Hamburger Menu */}
             <div className="lg:hidden">

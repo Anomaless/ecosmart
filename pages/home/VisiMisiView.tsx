@@ -30,7 +30,7 @@ export default function VisiMisiPage() {
       className="bg-white min-h-screen flex items-center justify-center py-16"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-        <h1 className="text-green-700 text-4xl font-bold mb-12">VISI MISI</h1>
+        <h1 className="text-[#2b7a0b] text-4xl font-bold mb-12">VISI MISI</h1>
         <motion.div
           className="flex flex-col md:flex-row justify-center items-center gap-8"
           initial="offscreen"

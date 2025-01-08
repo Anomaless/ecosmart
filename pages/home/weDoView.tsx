@@ -49,7 +49,7 @@ export default function WhatWeDoSection() {
   return (
     <section className="bg-white flex items-center justify-center py-12">
       <div className="text-center max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto">
-        <h2 className="text-2xl font-bold text-[#2b7a0b] mb-8">
+        <h2 className="text-[#2b7a0b] text-4xl font-bold mb-4">
           APA YANG KAMI LAKUKAN?
         </h2>
         <motion.div

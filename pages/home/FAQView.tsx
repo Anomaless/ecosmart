@@ -9,7 +9,7 @@ export default function FAQView() {
   return (
     <section className="py-12">
       <div className="text-start max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto">
-        <h2 className="text-2xl font-bold text-[#2b7a0b] mb-8 text-center">
+        <h2 className="text-[#2b7a0b] text-4xl font-bold mb-4 text-center">
           FAQ
         </h2>
         <Accordion type="single" collapsible className="w-full">

@@ -73,7 +73,7 @@ const page = () => {
           <h2 className=" font-bold text-center mb-8 text-2xl text-[#2b7a0b]">
             Produk Kami
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start items-center ">
             {loading
               ? Array.from({ length: 6 }).map((_, index) => (
                   <ProdukCardSkeleton key={index} />
