@@ -56,9 +56,9 @@ const page = () => {
         style={{ backgroundImage: "url('/assets/image/Berita.jpeg')" }}
       >
         <div className="absolute inset-0 bg-black opacity-70"></div>
-        <div className="relative max-w-screen-sm mx-auto px-6 sm:px-8 lg:px-16 text-center">
-          <h1 className="text-4xl font-bold mb-4">
-            <span className="text-[#2b7a0b]">INOVASI HIJAU</span> DARI{" "}
+        <div className="relative max-w-screen-md mx-auto px-6 sm:px-8 lg:px-16 text-center">
+          <h1 className="text-6xl font-bold mb-4">
+            <span className="text-[#2b7a0b]">INOVASI </span>HIJAU DARI{" "}
             <span className="text-[#2b7a0b]">KOMUNITAS</span> KAMI
           </h1>
           <p className="text-lg mb-8 text-white">

@@ -36,7 +36,7 @@ const NewsDetail = () => {
         if (foundNews) {
           setNews(foundNews);
           setRecommendedNews(
-            newsData.filter((news) => news.id !== id).slice(0, 2)
+            newsData.filter((news) => news.id !== id).slice(0, 3)
           );
         } else {
           console.error("No such document!");
@@ -62,7 +62,7 @@ const NewsDetail = () => {
   }
 
   return (
-    <div className="max-w-3xl px-4 pt-6 lg:pt-10 pb-12 sm:px-6 lg:px-8 mx-auto my-16">
+    <div className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto my-16">
       <div className="max-w-2xl mx-auto">
         {/* Avatar Media */}
         <div className="flex justify-between items-center mb-6">
@@ -108,11 +108,11 @@ const NewsDetail = () => {
       </div>
 
       {/* Recommended News Section */}
-      <div className="mt-12">
-        <h3 className="text-2xl font-medium mb-6 text-center lg:text-left">
-          Berita Lainnya yang Mungkin Anda Suka
+      <div className="mt-24">
+        <h3 className="text-[#2b7a0b] text-xl font-semibold mb-8 text-center uppercase">
+          Artikel Lainnya
         </h3>
-        <div className="grid sm:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-3 gap-6">
           {recommendedNews.length === 0
             ? Array.from({ length: 2 }).map((_, index) => (
                 <ProdukCardSkeleton key={index} />
