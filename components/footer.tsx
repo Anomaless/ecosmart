@@ -72,7 +72,7 @@ export default function Footer() {
                 />
                 <button
                   type="submit"
-                  className="w-full p-4 bg-[#00AC52] rounded-lg text-white hover:bg-green-600 transition font-semibold"
+                  className="w-full p-4 bg-[#00AC52] rounded-lg text-white hover:bg-green-600 transition font-medium"
                 >
                   KIRIM
                 </button>
